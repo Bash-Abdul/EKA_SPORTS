@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart - Eka Sportswear</title>
+
+    <!-- ICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .cart_container {
+        padding: 2rem;
+      }
+
+      .cart_items {
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr 1fr;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+        padding: 1rem;
+      }
+
+      .cart_item_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .cart_item_info {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cart_item_title {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .cart_item_price {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
+
+      .cart_item_quantity {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .cart_item_quantity input {
+        width: 50px;
+        text-align: center;
+      }
+
+      .cart_item_remove {
+        font-size: 1.5rem;
+        color: red;
+        cursor: pointer;
+      }
+
+      .cart_total {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+        font-size: 1.5rem;
+      }
+
+      .empty_cart {
+        text-align: center;
+        font-size: 2rem;
+        margin-top: 5rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header section">
+        <div class="nav">
+          <a href="index.html" class="logo">EKA</a>
+          <div class="nav_list">
+            <a href="women_2.html" class="nav_links">WOMEN</a>
+            <a href="#" class="nav_links">MEN</a>
+            <a href="#" class="nav_links">KIDS</a>
+            <a href="#" class="nav_links">SPORTS</a>
+          </div>
+        </div>
+        <div class="icons">
+          <div class="form">
+            <input
+              type="text"
+              class="form_search"
+              placeholder="SEARCH EKA.COM"
+            />
+            <i class="bx bx-search search"></i>
+          </div>
+          <div class="icon">
+            <a href="#" class="icon_item icon_hidden"
+              ><i class="bx bx-search search"></i
+            ></a>
+            <a href="forms.html" class="icon_item"
+              ><i class="bx bx-user"></i
+            ></a>
+            <a href="#" class="icon_item heart">
+              <div class="count heart_count">0</div>
+              <i class="bx bx-heart"></i>
+            </a>
+            <a href="cart.html" class="icon_item cart">
+              <div class="count cart_count">0</div>
+              <i class="bx bx-cart-alt"></i>
+            </a>
+          </div>
+          <div class="header_message">
+            <p>Free Deliveries To USA & Nigeria Only</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="cart_container">
+        <div id="cart_items"></div>
+        <div class="cart_total" id="cart_total"></div>
+      </div>
+    </div>
+
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      // let favoritesCount = parseInt(localStorage.getItem("favoritesCount")) || 0;
+
+      function updateCartCount() {
+        const cartCount = cart.reduce(
+          (count, item) => count + item.quantity,
+          0
+        );
+        document.querySelector(".cart_count").innerText = cartCount;
+      }
+
+      // function updateFavoritesCount() {
+      //   document.querySelector(".heart_count").innerText = favoritesCount;
+      // }
+
+      function displayCartItems() {
+        const cartItemsContainer = document.getElementById("cart_items");
+        cartItemsContainer.innerHTML = "";
+
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML = "<p class='empty_cart'>Your cart is empty</p>";
+          document.getElementById("cart_total").innerHTML = "";
+          return;
+        }
+
+        let total = 0;
+
+        cart.forEach((item, index) => {
+          total += item.new_price * item.quantity;
+
+          const cartItem = document.createElement("div");
+          cartItem.classList.add("cart_items");
+
+          cartItem.innerHTML = `
+            <div class="cart_item_image">
+              <img src="${item.img}" alt="">
+            </div>
+            <div class="cart_item_info">
+              <p class="cart_item_title">${item.title}</p>
+              <p class="cart_item_price">$${item.new_price}</p>
+            </div>
+            <div class="cart_item_quantity">
+              <button onclick="changeQuantity(${index}, -1)">-</button>
+              <input type="text" value="${item.quantity}" readonly>
+              <button onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
+            <div class="cart_item_remove" onclick="removeFromCart(${index})">
+              <i class='bx bx-trash'></i>
+            </div>
+          `;
+
+          cartItemsContainer.appendChild(cartItem);
+        });
+
+        document.getElementById("cart_total").innerHTML = `
+          <p>Total: $${total.toFixed(2)}</p>
+        `;
+      }
+
+      function changeQuantity(index, change) {
+        cart[index].quantity += change;
+
+        if (cart[index].quantity === 0) {
+          removeFromCart(index);
+        } else {
+          localStorage.setItem("cart", JSON.stringify(cart));
+          displayCartItems();
+          updateCartCount();
+        }
+      }
+
+      function removeFromCart(index) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        displayCartItems();
+        updateCartCount();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        displayCartItems();
+        updateCartCount();
+        // updateFavoritesCount();
+      });
+    </script>
+  </body>
+</html>
+
+
+
+
+
