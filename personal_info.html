@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eka Sportswear</title>
+
+    <!-- SEO STARTS -->
+
+    <meta
+      name="description"
+      content="Eka Sportswear - Quality sportswear for everyone. Free deliveries to USA & Nigeria."
+    />
+    <meta
+      name="keywords"
+      content="sportswear, clothing, fashion, men, women, kids"
+    />
+    <meta name="author" content="Eka Sportswear" />
+    <meta property="og:title" content="Eka Sportswear" />
+    <meta
+      property="og:description"
+      content="Quality sportswear for everyone. Free deliveries to USA & Nigeria."
+    />
+    <meta property="og:image" content="URL_to_image" />
+    <meta property="og:url" content="https://yourwebsite.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO ENDS -->
+
+    <!-- ICONS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="forms.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="header section">
+        <div class="nav">
+          <a href="index.html" class="logo">EKA</a>
+
+          <div class="nav_list">
+            <a href="" class="nav_links">WOMEN</a>
+            <a href="" class="nav_links">MEN</a
+            ><a href="" class="nav_links">KIDS</a>
+            <a href="" class="nav_links">SPORTS</a>
+          </div>
+        </div>
+
+        <div class="icons">
+          <div class="form">
+            <input type="text" class="form_search" placeholder="SEARCH EKA.COM"/>
+            <i class="bx bx-search search"></i>
+          </div>
+
+          <div class="icon">
+            <a href="#" class="icon_item icon_hidden"><i class="bx bx-search search"></i></a>
+            <a href="#" class="icon_item"><i class="bx bx-user"></i></a>
+            <a href="" class="icon_item"><i class="bx bx-heart"></i></a>
+            <a href="" class="icon_item"><i class="bx bx-cart-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="header_message">
+          <p>Free Deliveries To USA & Nigeria Only</p>
+        </div>
+      </header>
+
+      <section class="main_forms">
+        <form action="" class="personal_info_form forms">
+          <h1 class="form_heading">LOGIN</h1>
+
+          
+        </form>
+      </section>
+
+
+      <div class="footer section_lg">
+        <div class="footer_container">
+          <div class="footer_section support">
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Check Order</a></li>
+              <li><a href="#">Delivery & Returns</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Sale</a></li>
+              <li><a href="#">Payment Methods</a></li>
+              <li><a href="#">Become an Affiliate Partner</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer_section about">
+            <h3>About Us</h3>
+            <ul>
+              <li><a href="#">Company</a></li>
+              <li><a href="#">News</a></li>
+              <li><a href="#">Investors</a></li>
+              <li><a href="#">Careers</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer_section newsletter">
+            <h3>Sign up to our newsletter</h3>
+            <form action="#" method="post">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Sign Up For Newsletter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      let loginForm = document.querySelector(".login_form");
+      let signupForm = document.querySelector(".signup_form");
+      let formSwitchBtn = document.querySelector(".member");
+      let createAccountBtn = document.querySelector(".create_btn");
+
+      formSwitchBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        loginForm.style.display = "none";
+        signupForm.style.display = "flex";
+      });
+
+      createAccountBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        signupForm.style.display = "flex";
+        loginForm.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
