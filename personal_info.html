@@ -36,7 +36,65 @@
 
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="forms.css">
+    <link rel="stylesheet" href="forms.css" />
+
+    <style>
+      .personal_info_form {
+        width: 70rem;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-block: 7rem 5rem;
+      }
+      .personal_input {
+        border: 0.1rem solid #cacaca;
+        width: 100%;
+        padding: 1.2rem 0.8rem;
+        display: block;
+        /* margin-top: 0.9rem; */
+      }
+
+      .personal_input:focus {
+        border: 0.11rem solid black;
+      }
+
+      .name_info {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+      }
+
+      .name_info .f_name,
+      .name_info .l_name {
+        flex: 1 1 50%;
+        width: 100%;
+      }
+      .personal_info_buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-top: 1rem;
+      }
+
+      .personal_info_buttons button {
+        width: 100%;
+        text-align: center;
+        border: 0.1rem solid #cacacb;
+        font-size: 1.4rem;
+        font-weight: 600;
+        padding: 1.2rem;
+        cursor: pointer;
+      }
+      .save {
+        background: #000;
+        color: #fff;
+      }
+      .back {
+        background: #fff;
+        color: #000;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -54,12 +112,18 @@
 
         <div class="icons">
           <div class="form">
-            <input type="text" class="form_search" placeholder="SEARCH EKA.COM"/>
+            <input
+              type="text"
+              class="form_search"
+              placeholder="SEARCH EKA.COM"
+            />
             <i class="bx bx-search search"></i>
           </div>
 
           <div class="icon">
-            <a href="#" class="icon_item icon_hidden"><i class="bx bx-search search"></i></a>
+            <a href="#" class="icon_item icon_hidden"
+              ><i class="bx bx-search search"></i
+            ></a>
             <a href="#" class="icon_item"><i class="bx bx-user"></i></a>
             <a href="" class="icon_item"><i class="bx bx-heart"></i></a>
             <a href="" class="icon_item"><i class="bx bx-cart-alt"></i></a>
@@ -72,13 +136,54 @@
       </header>
 
       <section class="main_forms">
-        <form action="" class="personal_info_form forms">
-          <h1 class="form_heading">LOGIN</h1>
+        <form action="" class="personal_info_form">
+          <h1 class="form_heading">EDIT PERSONAL INFORMATION</h1>
 
-          
+          <div class="name_info">
+            <input
+              type="text"
+              class="f_name personal_input"
+              placeholder="FIRST NAME"
+            />
+            <input
+              type="text"
+              class="l_name personal_input"
+              placeholder="LAST NAME"
+            />
+          </div>
+
+          <input
+            type="text"
+            class="dob personal_input"
+            placeholder="DATE OF BIRTH"
+          />
+          <input
+            type="text"
+            class="gender personal_input"
+            placeholder="GENDER"
+          />
+          <input
+            type="text"
+            class="c_password personal_input"
+            placeholder="CURRENT PASSWORD"
+          />
+          <input
+            type="text"
+            class="n_password personal_input"
+            placeholder="NEW PASSWORD"
+          />
+          <input
+            type="text"
+            class="c_new_password personal_input"
+            placeholder="CONFIRM NEW PASSWORD"
+          />
+
+          <div class="personal_info_buttons">
+            <button class="save">SAVE</button>
+            <button class="back">BACK TO MY ACCOUNT</button>
+          </div>
         </form>
       </section>
-
 
       <div class="footer section_lg">
         <div class="footer_container">
@@ -96,7 +201,7 @@
               <li><a href="#">Become an Affiliate Partner</a></li>
             </ul>
           </div>
-      
+
           <div class="footer_section about">
             <h3>About Us</h3>
             <ul>
@@ -106,11 +211,11 @@
               <li><a href="#">Careers</a></li>
             </ul>
           </div>
-      
+
           <div class="footer_section newsletter">
             <h3>Sign up to our newsletter</h3>
             <form action="#" method="post">
-              <input type="email" placeholder="Your email address" required>
+              <input type="email" placeholder="Your email address" required />
               <button type="submit">Sign Up For Newsletter</button>
             </form>
           </div>
