@@ -181,6 +181,28 @@ input{
   justify-content: center;
 }
 
+/* Apply the bounce animation */
+.heart_icon {
+  animation: pulsate 1s ease-in-out infinite; /* Duration and repetition */
+}
+/* Bounce animation */
+@keyframes pulsate {
+  0% {
+    transform: scale(1); /* Initial size */
+    opacity: 1; /* Initial opacity */
+  }
+  50% {
+    transform: scale(1.2); /* Scale up */
+    opacity: 0.8; /* Slightly less opaque */
+  }
+  100% {
+    transform: scale(1); /* Return to initial size */
+    opacity: 1; /* Return to initial opacity */
+  }
+}
+
+
+
 
 
 
@@ -211,7 +233,7 @@ main{
 .main{
   height: 100%;
   width: 100%;
-  background-image: url(./images/Desktop_Homepage_Slider__712x384.png.png);
+  background-image: url(../images/Desktop_Homepage_Slider__712x384.png.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

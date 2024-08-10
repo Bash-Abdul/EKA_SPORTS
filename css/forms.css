@@ -1,10 +1,11 @@
  /* LOGIN/SIGNUP FORM STARTS */
  .main_forms{
     width: 100%;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* padding-block: 8rem; */
   }
 
   .forms {
@@ -98,6 +99,65 @@
   }
 
   /* LOGIN/SIGNUP FORM ENDS */
+
+  /* EVERY OTHER FORM PAGE STYLING */
+  .extra_forms{
+    width: 70rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    /* padding-block: 7rem; */
+  }
+  
+  .input_style {
+    border: 0.1rem solid #cacaca;
+    width: 100%;
+    padding: 1.2rem 0.8rem;
+    display: block;
+    /* margin-top: 0.9rem; */
+  }
+
+  .input_style:focus {
+    border: 0.11rem solid black;
+  }
+
+  .form_flex{
+    display: flex;
+        align-items: center;
+        gap: 0.7rem;
+  }
+
+  .form_flex input{
+    flex: 1 1 50%;
+    width: 100%;
+  }
+
+
+  .personal_info_buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .personal_info_buttons button {
+    width: 100%;
+    text-align: center;
+    border: 0.1rem solid #cacacb;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 1.2rem;
+    cursor: pointer;
+  }
+  .save {
+    background: #000;
+    color: #fff;
+  }
+  .back {
+    background: #fff;
+    color: #000;
+  }
 
 
   /* MEDIA QUERY */

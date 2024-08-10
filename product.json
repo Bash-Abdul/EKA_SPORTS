@@ -121,5 +121,81 @@
         "old_price": 55,
         "new_price": 35
     }
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
+
+    ,
+
+    {
+        "id": 14,
+        "img": "./images/best_seller_4.png",
+        "title": "Seamless Yoga Jumpsuit",
+        "category": "Fitness and Training",
+        "old_price": 55,
+        "new_price": 35
+    }
 
 ]

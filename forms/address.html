@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charinput_style
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eka Sportswear</title>
+    <title>Eka Sportswear | ADD NEW ADDRESS</title>
 
     <!-- SEO STARTS -->
 
@@ -35,8 +35,9 @@
     />
 
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/forms.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="forms.css" />
+
   </head>
   <body>
     <div class="container">
@@ -45,7 +46,7 @@
           <a href="index.html" class="logo">EKA</a>
 
           <div class="nav_list">
-            <a href="women_2.html" class="nav_links">WOMEN</a>
+            <a href="" class="nav_links">WOMEN</a>
             <a href="" class="nav_links">MEN</a
             ><a href="" class="nav_links">KIDS</a>
             <a href="" class="nav_links">SPORTS</a>
@@ -54,15 +55,21 @@
 
         <div class="icons">
           <div class="form">
-            <input type="text" class="form_search" placeholder="SEARCH EKA.COM"/>
+            <input
+              type="text"
+              class="form_search"
+              placeholder="SEARCH EKA.COM"
+            />
             <i class="bx bx-search search"></i>
           </div>
 
           <div class="icon">
-            <a href="#" class="icon_item icon_hidden"><i class="bx bx-search search"></i></a>
+            <a href="#" class="icon_item icon_hidden"
+              ><i class="bx bx-search search"></i
+            ></a>
             <a href="#" class="icon_item"><i class="bx bx-user"></i></a>
             <a href="" class="icon_item"><i class="bx bx-heart"></i></a>
-            <a href="cart_2.html" class="icon_item"><i class="bx bx-cart-alt"></i></a>
+            <a href="" class="icon_item"><i class="bx bx-cart-alt"></i></a>
           </div>
         </div>
 
@@ -72,74 +79,61 @@
       </header>
 
       <section class="main_forms">
-        <form action="" class="login_form forms">
-          <h1 class="form_heading">LOGIN</h1>
+        <form action="" class="new_address_form extra_forms">
+          <h1 class="form_heading">ADD NEW ADDRESS</h1>
 
-          <div class="email input_holder">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="email_input" />
-          </div>
 
-          <div class="password input_holder">
-            <label for="password">Password</label>
+
+          <input
+            type="text"
+            class="dob input_style"
+            placeholder="ADDRESS TITLE*"
+          />
+
+
+          <div class="form_flex">
             <input
-              type="password"
-              name="password"
-              id="password"
-              class="password_input"
+              type="text"
+              class="f_name input_style"
+              placeholder="STREET NAME"
+            />
+            <input
+              type="text"
+              class="l_name input_style"
+              placeholder="STREET NUMBER"
             />
           </div>
 
-          <p class="forgot"><a href="">FORGOT YOUR PASSWORD?</a></p>
-
-          <div class="form_btns">
-            <a href="" class="login">LOGIN</a>
-            <a href="" class="signup">SIGN UP</a>
-          </div>
-
-          <p class="member"><a href="">NOT A MEMBER YET?</a></p>
-
-          <div class="create">
-            <a href="#" class="create_btn">CREATE MY ACCOUNT</a>
-          </div>
-        </form>
-
-        <form action="" class="signup_form forms">
-          <h1 class="form_heading">CREATE ACCOUNT</h1>
-
-          <div class="f_name input_holder">
-            <label for="f_name">First Name</label>
-            <input type="text" name="f_name" id="f_name" class="f_name_input" />
-          </div>
-
-          <div class="l_name input_holder">
-            <label for="l_name">Last Name</label>
-            <input type="text" name="l_name" id="l_name" class="l_name_input" />
-          </div>
-
-          <div class="email input_holder">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="email_input" />
-          </div>
-
-          <div class="password input_holder">
-            <label for="password">Password</label>
+          <div class="form_flex">
             <input
-              type="password"
-              name="password"
-              id="password"
-              class="password_input"
+              type="text"
+              class="f_name input_style"
+              placeholder="POST CODE"
+            />
+            <input
+              type="text"
+              class="l_name input_style"
+              placeholder="CITY"
             />
           </div>
 
-          <p class="forget"><a href="">ALREADY HAVE AN ACCOUNT?</a></p>
+          <input
+            type="text"
+            class="dob input_style"
+            placeholder="COUNTRY"
+          />
+          <input
+            type="text"
+            class="gender input_style"
+            placeholder="PHONE NUMBER"
+          />
 
-          <div class="sign_up">
-            <a href="#" class="sign_up_btn">SIGN UP</a>
+          <div class="personal_info_buttons">
+            <button class="save">SAVE</button>
+            <button class="back">BACK TO MY ACCOUNT</button>
           </div>
         </form>
       </section>
-
 
       <div class="footer section_lg">
         <div class="footer_container">
@@ -157,7 +151,7 @@
               <li><a href="#">Become an Affiliate Partner</a></li>
             </ul>
           </div>
-      
+
           <div class="footer_section about">
             <h3>About Us</h3>
             <ul>
@@ -167,11 +161,11 @@
               <li><a href="#">Careers</a></li>
             </ul>
           </div>
-      
+
           <div class="footer_section newsletter">
             <h3>Sign up to our newsletter</h3>
             <form action="#" method="post">
-              <input type="email" placeholder="Your email address" required>
+              <input type="email" placeholder="Your email address" required />
               <button type="submit">Sign Up For Newsletter</button>
             </form>
           </div>
@@ -179,24 +173,6 @@
       </div>
     </div>
 
-    <script src="./js/script.js"></script>
-    <script>
-      let loginForm = document.querySelector(".login_form");
-      let signupForm = document.querySelector(".signup_form");
-      let formSwitchBtn = document.querySelector(".member");
-      let createAccountBtn = document.querySelector(".create_btn");
-
-      formSwitchBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        loginForm.style.display = "none";
-        signupForm.style.display = "flex";
-      });
-
-      createAccountBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        signupForm.style.display = "flex";
-        loginForm.style.display = "none";
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>

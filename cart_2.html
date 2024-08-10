@@ -13,32 +13,31 @@
     />
 
     <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <style>
-
-      .cartss{
+      .cartss {
         padding-block: 7rem;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .cart_container{
+      .cart_container {
         width: 90%;
         display: flex;
         gap: 2rem;
       }
 
-      .cart_box{
+      .cart_box {
         flex: 1 1 60%;
         width: 100%;
       }
 
-      .summary_box{
+      .summary_box {
         flex: 1 1 40%;
         width: 100%;
       }
-      .cart_heading{
+      .cart_heading {
         margin-bottom: 3rem;
       }
 
@@ -48,7 +47,6 @@
         gap: 1rem;
         align-items: center;
         margin-bottom: 1rem;
-        /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4); */
         padding: 1rem;
       }
 
@@ -69,7 +67,7 @@
         font-weight: bold;
       }
 
-      .cart_item_category{
+      .cart_item_category {
         font-size: 1.33rem;
         color: #777;
       }
@@ -110,30 +108,41 @@
       }
 
       .summary_box {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  border-radius: 8px;
-  background: #f9f9f9;
-}
+        /* border: 1px solid #ddd; */
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,.3);
+        /* border-radius: 8px; */
+        /* background: #f9f9f9; */
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
 
-.summary_item {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
+      .summary_item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
 
-.checkout_button {
-  width: 100%;
-  padding: 1rem;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-  border-radius: 4px;
-}
+      .checkout_button {
+        width: 100%;
+        padding: 1rem;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2rem;
+        border-radius: 4px;
+      }
 
+      .empty_checkout_message {
+        text-align: center;
+        color: red;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
     </style>
   </head>
 
@@ -165,11 +174,11 @@
             <a href="forms.html" class="icon_item"
               ><i class="bx bx-user"></i
             ></a>
-            <a href="#" class="icon_item heart">
+            <a href="#" class="icon_item heart heart_icon">
               <div class="count heart_count">0</div>
               <i class="bx bx-heart"></i>
             </a>
-            <a href="cart.html" class="icon_item cart">
+            <a href="cart_2.html" class="icon_item cart">
               <div class="count cart_count">0</div>
               <i class="bx bx-cart-alt"></i>
             </a>
@@ -186,10 +195,8 @@
             <div class="cart_heading">
               <h1>CART</h1>
             </div>
-            <ul id="cart_items">
-              
-            </ul>
-          <div class="cart_total" id="cart_total"></div>
+            <ul id="cart_items"></ul>
+            <div class="cart_total" id="cart_total"></div>
           </div>
 
           <div class="summary_box">
@@ -210,16 +217,20 @@
                 <span id="summary_total">$0.00</span>
               </p>
             </div>
-            <a href="checkout.html" class="check_button_cover"><button class="checkout_button">Proceed to Checkout</button></a>
+            <a href="checkout.html" class="check_button_cover"
+              ><button class="checkout_button" id="checkout_button">
+                Proceed to Checkout
+              </button></a
+            >
+            <p class="empty_checkout_message" id="empty_checkout_message"></p>
           </div>
-          
         </div>
       </div>
     </div>
 
     <script>
       let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      // let favoritesCount = parseInt(localStorage.getItem("favoritesCount")) || 0;
+          // let favoritesCount = parseInt(localStorage.getItem("favoritesCount")) || 0;
 
       function updateCartCount() {
         const cartCount = cart.reduce(
@@ -229,120 +240,65 @@
         document.querySelector(".cart_count").innerText = cartCount;
       }
 
-      // function updateFavoritesCount() {
-      //   document.querySelector(".heart_count").innerText = favoritesCount;
-      // }
-
-
-      // OLD CART FUNCTION STARTS
-
-      // function displayCartItems() {
-      //   const cartItemsContainer = document.getElementById("cart_items");
-      //   cartItemsContainer.innerHTML = "";
-
-      //   if (cart.length === 0) {
-      //     cartItemsContainer.innerHTML = "<p class='empty_cart'>Your cart is empty</p>";
-      //     document.getElementById("cart_total").innerHTML = "";
-      //     return;
-      //   }
-
-      //   let total = 0;
-
-      //   cart.forEach((item, index) => {
-      //     total += item.new_price * item.quantity;
-
-      //     const cartItem = document.createElement("li");
-      //     cartItem.classList.add("cart_item");
-
-      //     cartItem.innerHTML = `
-      //       <div class="cart_item_image">
-      //         <img src="${item.img}" alt="">
-      //       </div>
-      //       <div class="cart_item_info">
-      //         <p class="cart_item_title">${item.title}</p>
-      //         <p class="cart_item_category">${item.category}</p>
-      //         <p class="cart_item_price">$${item.new_price}</p>
-      //       </div>
-      //       <div class="cart_item_quantity">
-      //         <button onclick="changeQuantity(${index}, -1)">-</button>
-      //         <input type="text" value="${item.quantity}" readonly>
-      //         <button onclick="changeQuantity(${index}, 1)">+</button>
-      //       </div>
-      //       <div class="cart_item_remove" onclick="removeFromCart(${index})">
-      //         <i class='bx bx-trash'></i>
-      //       </div>
-      //     `;
-
-      //     cartItemsContainer.appendChild(cartItem);
-      //   });
-
-      //   document.getElementById("cart_total").innerHTML = `
-      //     <p>Total: $${total.toFixed(2)}</p>
-      //   `;
-      // }
-
-      // OLD CART FUNCTION ENDS
-
-      // NEW CART FUNCTION STARTS
-
       function displayCartItems() {
-  const cartItemsContainer = document.getElementById("cart_items");
-  cartItemsContainer.innerHTML = "";
+        const cartItemsContainer = document.getElementById("cart_items");
+        cartItemsContainer.innerHTML = "";
 
-  if (cart.length === 0) {
-    cartItemsContainer.innerHTML = "<p class='empty_cart'>Your cart is empty</p>";
-    document.getElementById("cart_total").innerHTML = "";
-    updateSummary(0);
-    return;
-  }
+        if (cart.length === 0) {
+          cartItemsContainer.innerHTML =
+            "<p class='empty_cart'>Your cart is empty</p>";
+          document.getElementById("cart_total").innerHTML = "";
+          updateSummary(0);
+          disableCheckoutButton();
+          return;
+        }
 
-  let subtotal = 0;
+        let subtotal = 0;
 
-  cart.forEach((item, index) => {
-    subtotal += item.new_price * item.quantity;
+        cart.forEach((item, index) => {
+          subtotal += item.new_price * item.quantity;
 
-    const cartItem = document.createElement("li");
-    cartItem.classList.add("cart_item");
+          const cartItem = document.createElement("li");
+          cartItem.classList.add("cart_item");
 
-    cartItem.innerHTML = `
-      <div class="cart_item_image">
-        <img src="${item.img}" alt="">
-      </div>
-      <div class="cart_item_info">
-        <p class="cart_item_title">${item.title}</p>
-        <p class="cart_item_category">${item.category}</p>
-        <p class="cart_item_price">$${item.new_price}</p>
-      </div>
-      <div class="cart_item_quantity">
-        <button onclick="changeQuantity(${index}, -1)">-</button>
-        <input type="text" value="${item.quantity}" readonly>
-        <button onclick="changeQuantity(${index}, 1)">+</button>
-      </div>
-      <div class="cart_item_remove" onclick="removeFromCart(${index})">
-        <i class='bx bx-trash'></i>
-      </div>
-    `;
+          cartItem.innerHTML = `
+            <div class="cart_item_image">
+              <img src="${item.img}" alt="">
+            </div>
+            <div class="cart_item_info">
+              <p class="cart_item_title">${item.title}</p>
+              <p class="cart_item_category">${item.category}</p>
+              <p class="cart_item_price">$${item.new_price}</p>
+            </div>
+            <div class="cart_item_quantity">
+              <button onclick="changeQuantity(${index}, -1)">-</button>
+              <input type="text" value="${item.quantity}" readonly>
+              <button onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
+            <div class="cart_item_remove" onclick="removeFromCart(${index})">
+              <i class='bx bx-trash'></i>
+            </div>
+          `;
 
-    cartItemsContainer.appendChild(cartItem);
-  });
+          cartItemsContainer.appendChild(cartItem);
+        });
 
-  document.getElementById("cart_total").innerHTML = `
-    <p>Total: $${subtotal.toFixed(2)}</p>
-  `;
-  updateSummary(subtotal);
-}
+        document.getElementById("cart_total").innerHTML = `
+          <p>Total: $${subtotal.toFixed(2)}</p>
+        `;
+        updateSummary(subtotal);
+        enableCheckoutButton();
+      }
 
-function updateSummary(subtotal) {
-  const taxRate = 0.05;
-  const tax = subtotal * taxRate;
-  const total = subtotal + tax;
+      function updateSummary(subtotal) {
+        const taxRate = 0.05;
+        const tax = subtotal * taxRate;
+        const total = subtotal + tax;
 
-  document.getElementById("summary_subtotal").innerText = `$${subtotal.toFixed(2)}`;
-  document.getElementById("summary_tax").innerText = `$${tax.toFixed(2)}`;
-  document.getElementById("summary_total").innerText = `$${total.toFixed(2)}`;
-}
-
-      // NEW CART FUNCTION ENDS
+        document.getElementById("summary_subtotal").innerText = `$${subtotal.toFixed(2)}`;
+        document.getElementById("summary_tax").innerText = `$${tax.toFixed(2)}`;
+        document.getElementById("summary_total").innerText = `$${total.toFixed(2)}`;
+      }
 
       function changeQuantity(index, change) {
         cart[index].quantity += change;
@@ -363,15 +319,34 @@ function updateSummary(subtotal) {
         updateCartCount();
       }
 
+      function disableCheckoutButton() {
+        const checkoutButton = document.getElementById("checkout_button");
+        const emptyCheckoutMessage = document.getElementById("empty_checkout_message");
+
+        checkoutButton.disabled = true;
+        checkoutButton.style.backgroundColor = "#ccc";
+        checkoutButton.style.cursor = "not-allowed";
+        emptyCheckoutMessage.innerText = "Cart empty, nothing to check out";
+      }
+
+      function enableCheckoutButton() {
+        const checkoutButton = document.getElementById("checkout_button");
+        const emptyCheckoutMessage = document.getElementById("empty_checkout_message");
+
+        checkoutButton.disabled = false;
+        checkoutButton.style.backgroundColor = "#000";
+        checkoutButton.style.cursor = "pointer";
+        emptyCheckoutMessage.innerText = "";
+      }
+
       document.addEventListener("DOMContentLoaded", () => {
         displayCartItems();
         updateCartCount();
-        // updateFavoritesCount();
+           // updateFavoritesCount();
       });
     </script>
   </body>
 </html>
-
 
 
 

@@ -1,398 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eka Sportswear</title>
 
-    <!-- SEO STARTS -->
-    <meta
-      name="description"
-      content="Eka Sportswear - Quality sportswear for everyone. Free deliveries to USA & Nigeria."
-    />
-    <meta
-      name="keywords"
-      content="sportswear, clothing, fashion, men, women, kids"
-    />
-    <meta name="author" content="Eka Sportswear" />
-    <meta property="og:title" content="Eka Sportswear" />
-    <meta
-      property="og:description"
-      content="Quality sportswear for everyone. Free deliveries to USA & Nigeria."
-    />
-    <meta property="og:image" content="URL_to_image" />
-    <meta property="og:url" content="https://yourwebsite.com" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO ENDS -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eka Sportswear</title>
 
-    <!-- ICONS -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
+  <!-- SEO STARTS -->
+  <meta name="description" content="Eka Sportswear - Quality sportswear for everyone. Free deliveries to USA & Nigeria." />
+  <meta name="keywords" content="sportswear, clothing, fashion, men, women, kids" />
+  <meta name="author" content="Eka Sportswear" />
+  <meta property="og:title" content="Eka Sportswear" />
+  <meta property="og:description" content="Quality sportswear for everyone. Free deliveries to USA & Nigeria." />
+  <meta property="og:image" content="URL_to_image" />
+  <meta property="og:url" content="https://yourwebsite.com" />
+  <!-- SEO ENDS -->
 
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="forms.css" />
+  <!-- ICONS -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 
-    <style>
-      .product_container {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 1rem;
-      }
+  <!-- CUSTOM CSS -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/forms.css" />
 
-      .products {
-        padding-block: 7rem;
-      }
+  <style>
+    .product_container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+    }
 
-      .product_heading {
-        margin-bottom: 7rem;
-        font-size: 2rem;
-      }
+    .products {
+      padding-block: 7rem;
+    }
 
-      .product_items {
-        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
-        padding: 1rem;
-      }
+    .product_heading {
+      margin-bottom: 7rem;
+      font-size: 2rem;
+    }
 
-      .product_banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        vertical-align: middle;
-      }
+    .product_items {
+      box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+      padding: 1rem;
+    }
 
-      .product_content {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-        padding-block: 2rem;
-      }
+    .product_banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      vertical-align: middle;
+    }
 
-      .product_category {
-        font-size: 1.5rem;
-      }
+    .product_content {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      padding-block: 2rem;
+    }
 
-      .product_title {
-        font-size: 1.77rem;
-      }
+    .product_category {
+      font-size: 1.5rem;
+    }
 
-      .price_div {
-        display: flex;
-        align-items: center;
-        gap: 0.8rem;
-      }
+    .product_title {
+      font-size: 1.77rem;
+    }
 
-      .content_low {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 1.2rem;
-      }
+    .price_div {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
 
-      .new_price {
-        font-size: 1.4rem;
-        font-weight: 600;
-      }
+    .content_low {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 1.2rem;
+    }
 
-      .old_price {
-        font-size: 1.2rem;
-        text-decoration: line-through;
-      }
+    .new_price {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
 
-      .cart {
-        font-size: 2.2rem;
-        cursor: pointer;
-      }
+    .old_price {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+    }
 
-      #pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 7rem;
-        gap: 1rem;
-        font-size: 1.5rem;
-      }
+    .cart {
+      font-size: 2.2rem;
+      cursor: pointer;
+    }
 
-      /* Add this CSS to change heart color */
-      .active {
-        color: red;
-        z-index: 10;
-      }
-    </style>
-  </head>
+    #pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 7rem;
+      gap: 1rem;
+      font-size: 1.5rem;
+    }
 
-  <body>
-    <div class="container">
-      <header class="header section">
-        <div class="nav">
-          <a href="index.html" class="logo">EKA</a>
-          <div class="nav_list">
-            <a href="#" class="nav_links">WOMEN</a>
-            <a href="#" class="nav_links">MEN</a>
-            <a href="#" class="nav_links">KIDS</a>
-            <a href="#" class="nav_links">SPORTS</a>
-          </div>
+    .heart_2.active .bx-heart{
+      color: red;
+      z-index: 10;
+    }
+
+    .pagination-button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .pagination-button.active {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .pagination-button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header section">
+      <div class="nav">
+        <a href="index.html" class="logo">EKA</a>
+        <div class="nav_list">
+          <a href="women_2.html" class="nav_links">WOMEN</a>
+          <a href="#" class="nav_links">MEN</a>
+          <a href="#" class="nav_links">KIDS</a>
+          <a href="#" class="nav_links">SPORTS</a>
         </div>
-        <div class="icons">
-          <div class="form">
-            <input
-              type="text"
-              class="form_search"
-              placeholder="SEARCH EKA.COM"
-            />
-            <i class="bx bx-search search"></i>
-          </div>
-          <div class="icon">
-            <a href="#" class="icon_item icon_hidden"
-              ><i class="bx bx-search search"></i
-            ></a>
-            <a href="forms.html" class="icon_item"
-              ><i class="bx bx-user"></i
-            ></a>
-            <a href="#" class="icon_item heart">
-              <div class="count heart_count">0</div>
-              <i class="bx bx-heart"></i>
-            </a>
-            <a href="cart_2.html" class="icon_item cart">
-              <div class="count cart_count">0</div>
-              <i class="bx bx-cart-alt"></i>
-            </a>
-          </div>
-          <div class="header_message">
-            <p>Free Deliveries To USA & Nigeria Only</p>
-          </div>
+      </div>
+      <div class="icons">
+        <div class="form">
+          <input type="text" class="form_search" placeholder="SEARCH EKA.COM" />
+          <i class="bx bx-search search"></i>
         </div>
-      </header>
-
-      <!-- PRODUCT SECTION STARTS -->
-      <section class="products section_lg">
-        <div class="product_heading">
-          <h1>WOMEN'S CLOTHES</h1>
+        <div class="icon">
+          <a href="#" class="icon_item icon_hidden"><i class="bx bx-search search"></i></a>
+          <a href="forms.html" class="icon_item"><i class="bx bx-user"></i></a>
+          <a href="#" class="icon_item heart heart_icon">
+            <div class="count heart_count">0</div>
+            <i class="bx bx-heart heart_itself"></i>
+          </a>
+          <a href="cart_2.html" class="icon_item cart">
+            <div class="count cart_count">0</div>
+            <i class="bx bx-cart-alt"></i>
+          </a>
         </div>
-        <div class="filter" style="margin-block: 2rem;"></div>
-        <div class="product_container grid"></div>
-        <div id="pagination" class="pagination-container"></div>
-      </section>
-      <!-- PRODUCT SECTION ENDS -->
+        <div class="header_message">
+          <p>Free Deliveries To USA & Nigeria Only</p>
+        </div>
+      </div>
+    </header>
 
-      <div class="footer section_lg">
-        <div class="footer_container">
-          <div class="footer_section support">
-            <h3>Support</h3>
-            <ul>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Check Order</a></li>
-              <li><a href="#">Delivery & Returns</a></li>
-              <li><a href="#">Return Policy</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Sale</a></li>
-              <li><a href="#">Payment Methods</a></li>
-              <li><a href="#">Become an Affiliate Partner</a></li>
-            </ul>
-          </div>
-          <div class="footer_section about">
-            <h3>About Us</h3>
-            <ul>
-              <li><a href="#">Company</a></li>
-              <li><a href="#">News</a></li>
-              <li><a href="#">Investors</a></li>
-              <li><a href="#">Careers</a></li>
-            </ul>
-          </div>
-          <div class="footer_section newsletter">
-            <h3>Sign up to our newsletter</h3>
-            <form action="#" method="post">
-              <input type="email" placeholder="Your email address" required />
-              <button type="submit">Sign Up For Newsletter</button>
-            </form>
-          </div>
+    <!-- PRODUCT SECTION STARTS -->
+    <section class="products section_lg">
+      <div class="product_heading">
+        <h1>WOMEN'S CLOTHES</h1>
+      </div>
+      <div class="filter" style="margin-block: 2rem"></div>
+      <div class="product_container"></div>
+      <div id="pagination" class="pagination-container"></div>
+    </section>
+    <!-- PRODUCT SECTION ENDS -->
+
+    <div class="footer section_lg">
+      <div class="footer_container">
+        <div class="footer_section support">
+          <h3>Support</h3>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Check Order</a></li>
+            <li><a href="#">Delivery & Returns</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Sale</a></li>
+            <li><a href="#">Payment Methods</a></li>
+            <li><a href="#">Become an Affiliate Partner</a></li>
+          </ul>
+        </div>
+        <div class="footer_section about">
+          <h3>About Us</h3>
+          <ul>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">Investors</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer_section newsletter">
+          <h3>Sign up to our newsletter</h3>
+          <form action="#" method="post">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Sign Up For Newsletter</button>
+          </form>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
-// let favoritesCount = parseInt(localStorage.getItem("favoritesCount")) || 0;
-
-function updateCartCount() {
-  const cartCount = cart.reduce(
-    (count, item) => count + item.quantity,
-    0
-  );
-  document.querySelector(".cart_count").innerText = cartCount;
-}
-
-function addToCart(item) {
-  const cartItem = cart.find((ci) => ci.id === item.id);
-  if (cartItem) {
-    cartItem.quantity++;
-  } else {
-    cart.push({ ...item, quantity: 1 });
-  }
-  localStorage.setItem("cart", JSON.stringify(cart));
-  updateCartCount();
-  favoritesCount++;
-  localStorage.setItem("favoritesCount", favoritesCount);
-  updateFavoritesCount();
-}
-
-// function updateFavoritesCount() {
-//   document.querySelector(".heart_count").innerText = favoritesCount;
-// }
-
-      // let cart = JSON.parse(localStorage.getItem("cart")) || [];
-      // let favoritesCount = 0;
-
-      // function updateCartCount() {
-      //   const cartCount = cart.reduce(
-      //     (count, item) => count + item.quantity,
-      //     0
-      //   );
-      //   document.querySelector(".cart_count").innerText = cartCount;
-      // }
-
-      // function addToCart(item) {
-      //   const cartItem = cart.find((ci) => ci.name === item.name);
-      //   if (cartItem) {
-      //     cartItem.quantity++;
-      //   } else {
-      //     cart.push({ ...item, quantity: 1 });
-      //   }
-      //   localStorage.setItem("cart", JSON.stringify(cart));
-      //   updateCartCount();
-      // }
-
-      // function addToFavorites(item) {
-      //   favoritesCount++;
-      //   document.querySelector(".heart_count").innerText = favoritesCount;
-      //   alert(`Added ${item.name} to favorites!`);
-      // }
-
-      function paginate(items, itemsPerPage, paginationContainer) {
-        let currentPage = 1;
-        const totalPages = Math.ceil(items.length / itemsPerPage);
-
-        function showItems(page) {
-          const startIndex = (page - 1) * itemsPerPage;
-          const endIndex = startIndex + itemsPerPage;
-          const pageItems = items.slice(startIndex, endIndex);
-          const productContainer = document.querySelector(".product_container");
-          productContainer.innerHTML = "";
-
-          let displayData = "";
-          pageItems.forEach((product) => {
-            displayData += `
-              <div class="product_items">
-                <div class="product_banner">
-                  <img src="${product.img}" alt="">
-                  <i class='bx bx-heart heart heart_2' data-id="${
-                    product.id
-                  }" onclick='addToFavorites(${JSON.stringify(product)})'></i>
-                </div>
-                <div class="product_content">
-                  <p class="product_category">${product.category}</p>
-                  <h1 class="product_title">${product.title}</h1>
-                  <div class="content_low">
-                    <div class="price_div">
-                      <p class="new_price">$${product.new_price}</p>
-                      <p class="old_price">$${product.old_price}</p>
-                    </div>
-                    <i class='bx bx-cart-alt cart' onclick='addToCart(${JSON.stringify(
-                      product
-                    )})'></i>
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let favoritesCount = parseInt(localStorage.getItem("favoritesCount")) || 0;
+    const productsPerPage = 5;
+    const paginationSize = 3; // Number of visible page links in pagination
+    const pageRange = 2; // Number of pages to show around the current page
+  
+    function updateCartCount() {
+      const cartCount = cart.reduce((count, item) => count + item.quantity, 0);
+      document.querySelector(".cart_count").innerText = cartCount;
+    }
+  
+    function updateFavoritesCount() {
+      document.querySelector(".heart_count").innerText = favoritesCount;
+    }
+  
+    function addToCart(item) {
+      const cartItem = cart.find(ci => ci.id === item.id);
+      if (cartItem) {
+        cartItem.quantity++;
+      } else {
+        cart.push({ ...item, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartCount();
+    }
+  
+    function addToFavorites(item) {
+      favoritesCount++;
+      localStorage.setItem("favoritesCount", favoritesCount);
+      updateFavoritesCount();
+      // alert(`Added ${item.name} to favorites!`);
+      document.querySelector('.heart_itself').classList.add('active')
+      document.querySelectorAll('.heart_2[data-id="${item.id}"]`').forEach((iconss) =>{
+        iconss.classList.add('active');
+      })
+    }
+  
+    function createStructuredData(product) {
+      const structuredData = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": product.title,
+        "image": `${product.img}`,
+        "description": `This is a description of ${product.title}.`,
+        "sku": product.id,
+        "offers": {
+          "@type": "Offer",
+          "url": `https://example.com/product/${product.id}`,
+          "priceCurrency": "USD",
+          "price": product.new_price,
+          "priceValidUntil": "2024-12-31",
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "Eka Sportswear"
+          }
+        }
+      };
+      return JSON.stringify(structuredData);
+    }
+  
+    function paginate(products, itemsPerPage, paginationContainer) {
+      let currentPage = 1;
+      const totalPages = Math.ceil(products.length / itemsPerPage);
+  
+      function showItems(page) {
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const pageItems = products.slice(startIndex, endIndex);
+        const productContainer = document.querySelector(".product_container");
+        productContainer.innerHTML = "";
+  
+        let displayData = "";
+        pageItems.forEach(product => {
+          displayData += `
+            <div class="product_items">
+              <div class="product_banner">
+                <img src="${product.img}" alt="">
+                <i class='bx bx-heart heart heart_2' data-id="${product.id}" onclick='addToFavorites(${JSON.stringify(product)})'></i>
+              </div>
+              <div class="product_content">
+                <p class="product_category">${product.category}</p>
+                <h1 class="product_title">${product.title}</h1>
+                <div class="content_low">
+                  <div class="price_div">
+                    <p class="new_price">$${product.new_price}</p>
+                    <p class="old_price">$${product.old_price}</p>
                   </div>
+                  <i class='bx bx-cart-alt cart' onclick='addToCart(${JSON.stringify(product)})'></i>
                 </div>
               </div>
+            </div>
           `;
-          });
-          productContainer.innerHTML = displayData;
-        }
-
-        function setupPagination() {
-          const pagination = document.querySelector(paginationContainer);
-          pagination.innerHTML = "";
-
-          const prevButton = document.createElement("button");
-          prevButton.style.cursor = 'pointer';
-          prevButton.innerText = "Previous";
-          prevButton.disabled = currentPage === 1;
-          prevButton.addEventListener("click", (event) => {
-            event.preventDefault();
-            if (currentPage > 1) {
-              currentPage--;
-              showItems(currentPage);
-              setupPagination();
-            }
-          });
-          pagination.appendChild(prevButton);
-
-          for (let i = 1; i <= totalPages; i++) {
-            const link = document.createElement("a");
-            link.href = "#";
-            link.innerText = i;
-
-            if (i === currentPage) {
-              link.classList.add("active");
-            }
-
-            link.addEventListener("click", (event) => {
-              event.preventDefault();
-              currentPage = i;
-              showItems(currentPage);
-
-              const currentActive = pagination.querySelector(".active");
-              currentActive.classList.remove("active");
-              link.classList.add("active");
-            });
-
-            pagination.appendChild(link);
+        });
+        productContainer.innerHTML = displayData;
+      }
+  
+      function setupPagination() {
+        const pagination = document.querySelector(paginationContainer);
+        pagination.innerHTML = "";
+  
+        function createPageButton(page, text) {
+          const button = document.createElement("button");
+          button.innerText = text;
+          button.classList.add("pagination-button");
+          if (page === currentPage) {
+            button.classList.add("active");
           }
-
-          const nextButton = document.createElement("button");
-          nextButton.style.cursor = 'pointer';
-          nextButton.innerText = "Next";
-          nextButton.disabled = currentPage === totalPages;
-          nextButton.addEventListener("click", (event) => {
+          button.addEventListener("click", (event) => {
             event.preventDefault();
-            if (currentPage < totalPages) {
-              currentPage++;
-              showItems(currentPage);
-              setupPagination();
-            }
+            currentPage = page;
+            showItems(currentPage);
+            setupPagination();
           });
-          pagination.appendChild(nextButton);
+          return button;
         }
-
-        showItems(currentPage);
-        setupPagination();
-      }
-
-      async function fetchProducts() {
-        try {
-          const response = await fetch("product.json");
-          const products = await response.json();
-          const itemsPerPage = 5;
-          const paginationContainer = "#pagination";
-          paginate(products, itemsPerPage, paginationContainer);
-        } catch (error) {
-          console.error("Error fetching products:", error);
+  
+        const paginationNav = document.createDocumentFragment();
+  
+        const firstButton = createPageButton(1, "First");
+        firstButton.disabled = currentPage === 1;
+        paginationNav.appendChild(firstButton);
+  
+        const prevButton = createPageButton(currentPage - 1, "Previous");
+        prevButton.disabled = currentPage === 1;
+        paginationNav.appendChild(prevButton);
+  
+        const startPage = Math.max(1, currentPage - pageRange);
+        const endPage = Math.min(totalPages, currentPage + pageRange);
+  
+        if (startPage > 1) {
+          paginationNav.appendChild(createPageButton(1, 1));
+          if (startPage > 2) {
+            const ellipsis = document.createElement("span");
+            ellipsis.innerText = "...";
+            ellipsis.classList.add("pagination-button");
+            paginationNav.appendChild(ellipsis);
+          }
         }
+  
+        for (let i = startPage; i <= endPage; i++) {
+          paginationNav.appendChild(createPageButton(i, i));
+        }
+  
+        if (endPage < totalPages) {
+          if (endPage < totalPages - 1) {
+            const ellipsis = document.createElement("span");
+            ellipsis.innerText = "...";
+            ellipsis.classList.add("pagination-button");
+            paginationNav.appendChild(ellipsis);
+          }
+          paginationNav.appendChild(createPageButton(totalPages, totalPages));
+        }
+  
+        const nextButton = createPageButton(currentPage + 1, "Next");
+        nextButton.disabled = currentPage === totalPages;
+        paginationNav.appendChild(nextButton);
+  
+        const lastButton = createPageButton(totalPages, "Last");
+        lastButton.disabled = currentPage === totalPages;
+        paginationNav.appendChild(lastButton);
+  
+        pagination.innerHTML = "";
+        pagination.appendChild(paginationNav);
       }
-
+  
+      showItems(currentPage);
+      setupPagination();
+    }
+  
+    async function fetchProducts() {
+      try {
+        const response = await fetch("product.json");
+        const products = await response.json();
+        paginate(products, productsPerPage, "#pagination");
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    }
+  
+    document.addEventListener("DOMContentLoaded", () => {
       fetchProducts();
+      updateCartCount();
+      updateFavoritesCount();
+    });
+  </script>
+  
+  
+</body>
 
-      document.addEventListener("DOMContentLoaded", () => {
-  updateCartCount();
-  updateFavoritesCount();
-});
-
-      // Initial update of cart count
-      // updateCartCount();
-    </script>
-  </body>
 </html>

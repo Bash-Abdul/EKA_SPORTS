@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eka Sportswear</title>
+    <title>Eka Sportswear | EDIT PERSONAL INFO</title>
 
     <!-- SEO STARTS -->
 
@@ -38,63 +38,6 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="forms.css" />
 
-    <style>
-      .personal_info_form {
-        width: 70rem;
-        padding: 1.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
-        margin-block: 7rem 5rem;
-      }
-      .personal_input {
-        border: 0.1rem solid #cacaca;
-        width: 100%;
-        padding: 1.2rem 0.8rem;
-        display: block;
-        /* margin-top: 0.9rem; */
-      }
-
-      .personal_input:focus {
-        border: 0.11rem solid black;
-      }
-
-      .name_info {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-      }
-
-      .name_info .f_name,
-      .name_info .l_name {
-        flex: 1 1 50%;
-        width: 100%;
-      }
-      .personal_info_buttons {
-        display: flex;
-        align-items: center;
-        gap: 0.7rem;
-        margin-top: 1rem;
-      }
-
-      .personal_info_buttons button {
-        width: 100%;
-        text-align: center;
-        border: 0.1rem solid #cacacb;
-        font-size: 1.4rem;
-        font-weight: 600;
-        padding: 1.2rem;
-        cursor: pointer;
-      }
-      .save {
-        background: #000;
-        color: #fff;
-      }
-      .back {
-        background: #fff;
-        color: #000;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -136,45 +79,45 @@
       </header>
 
       <section class="main_forms">
-        <form action="" class="personal_info_form">
+        <form action="" class="personal_info_form extra_forms">
           <h1 class="form_heading">EDIT PERSONAL INFORMATION</h1>
 
-          <div class="name_info">
+          <div class="form_flex">
             <input
               type="text"
-              class="f_name personal_input"
+              class="f_name input_style"
               placeholder="FIRST NAME"
             />
             <input
               type="text"
-              class="l_name personal_input"
+              class="l_name input_style"
               placeholder="LAST NAME"
             />
           </div>
 
           <input
             type="text"
-            class="dob personal_input"
+            class="dob input_style"
             placeholder="DATE OF BIRTH"
           />
           <input
             type="text"
-            class="gender personal_input"
+            class="gender input_style"
             placeholder="GENDER"
           />
           <input
             type="text"
-            class="c_password personal_input"
+            class="c_password input_style"
             placeholder="CURRENT PASSWORD"
           />
           <input
             type="text"
-            class="n_password personal_input"
+            class="n_password input_style"
             placeholder="NEW PASSWORD"
           />
           <input
             type="text"
-            class="c_new_password personal_input"
+            class="c_new_password input_style"
             placeholder="CONFIRM NEW PASSWORD"
           />
 
@@ -224,23 +167,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script>
-      let loginForm = document.querySelector(".login_form");
-      let signupForm = document.querySelector(".signup_form");
-      let formSwitchBtn = document.querySelector(".member");
-      let createAccountBtn = document.querySelector(".create_btn");
-
-      formSwitchBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        loginForm.style.display = "none";
-        signupForm.style.display = "flex";
-      });
-
-      createAccountBtn.addEventListener("click", (event) => {
-        event.preventDefault();
-        signupForm.style.display = "flex";
-        loginForm.style.display = "none";
-      });
-    </script>
   </body>
 </html>
